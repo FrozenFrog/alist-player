@@ -4,6 +4,10 @@
 
 This is a custom-designed, SoundCloud-style audio player integrated for use with **Alist**. It features bespoke audio controls and utilizes the **[Wavesurfer.js](http://wavesurfer-js.org/)** library to beautifully render the audio waveform.
 
+
+<img width="963" height="832" alt="Screenshot 2025-10-11 at 11 32 21" src="https://github.com/user-attachments/assets/2523d645-4737-4bc3-96ee-112566f7d42d" />
+
+
 ## Installation Guide
 
 To set up this player, navigate to **Alist Settings** -> **Preview** and append the following configuration block:
