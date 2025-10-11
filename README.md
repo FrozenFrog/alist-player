@@ -1,13 +1,21 @@
-# SoundCloud Player
+# SoundCloud-style Player for Alist
 
 ## Overview
 
-A SoundCloud-style audio player. Custom-designed audio controls, using [Wavesurfer.js](http://wavesurfer-js.org/) for the waveform.
+This is a custom-designed, SoundCloud-style audio player integrated for use with **Alist**. It features bespoke audio controls and utilizes the **[Wavesurfer.js](http://wavesurfer-js.org/)** library to beautifully render the audio waveform.
 
-A full guide detailing how it was created can be found below.
+## Installation Guide
 
-[Create a SoundCloud audio player with Wavesurfer.js](https://hassancorrigan.com/blog/create-a-soundcloud-audio-player-with-wavesurfer-js).
+To set up this player, navigate to **Alist Settings** -> **Preview** and append the following configuration block:
 
-## Credits
+```json
+"wav,mp3,m4a": {
+    "Wavesurfer.js": "https://<your-github-page>.github.io/alist-player/index.html?url=$e_url"
+}
+```
+## Credits and Acknowledgements
 
-Audio sample taken from [FileSamples.com](https://filesamples.com/).
+This project would not have been possible without the contributions and inspiration from:
+
+* **HassanCorrigan**
+* **emulienfou** ([Gist](https://gist.github.com/emulienfou/ddfea6f416379253f91f67448a96f826))

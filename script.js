@@ -75,9 +75,20 @@ const wavesurfer = initializeWavesurfer()
 const params = new URLSearchParams(document.location.search);
 const audioUrl = params.get("url");
 const lastSlashIndex = audioUrl.lastIndexOf('/');
-let fileNameWithExtension = audioUrl.substring(lastSlashIndex + 1);
-let fileName = fileNameWithExtension.split('.')[0];
 
+let encodedFileName = audioUrl.substring(lastSlashIndex + 1);
+const queryIndex = encodedFileName.indexOf('?');
+  if (queryIndex !== -1) {
+  encodedFileName = encodedFileName.substring(0, queryIndex);
+}
+let fileName;
+try {
+  const decodedFileName = decodeURIComponent(encodedFileName);
+  fileName = decodedFileName;
+} catch (e) {
+  console.error("Lỗi giải mã URL:", e);
+  fileName = encodedFileName;
+}
 
 // Override the renderer to draw wave
 wavesurfer.drawer.drawWave = (peaks, channelIndex, start, end) => {
