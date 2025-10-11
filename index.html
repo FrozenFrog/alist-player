@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SoundCloud Player</title>
-
+    <title>Alist Soundwave Player</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container">
-      <h1>SoundCloud Player</h1>
+      <h1>Alist Soundwave Player</h1>
 
       <div class="audio-player">
         <button id="playButton" class="play-button">
@@ -23,7 +22,7 @@
         </button>
 
         <div class="player-body">
-          <p class="title">Artist - Track Title</p>
+          <p class="title" id="trackinfo">Artist - Track Title</p>
           <div id="waveform" class="waveform"></div>
 
           <div class="controls">
@@ -54,7 +53,7 @@
         </div>
       </div>
     </main>
-    <script src="https://unpkg.com/wavesurfer.js@5.0.1/dist/wavesurfer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wavesurfer.js@6.6.3/dist/wavesurfer.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
