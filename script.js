@@ -1,5 +1,7 @@
 const playButton = document.querySelector('#playButton')
 const playButtonIcon = document.querySelector('#playButtonIcon')
+const rewindButton = document.querySelector('#rewindButton')
+const forwardButton = document.querySelector('#forwardButton')
 const waveform = document.querySelector('#waveform')
 const fileNameTitle = document.querySelector('#trackinfo')
 const volumeIcon = document.querySelector('#volumeIcon')
@@ -47,6 +49,16 @@ const handleVolumeChange = e => {
   wavesurfer.setVolume(volume)
   // Save the value to local storage so it persists between page reloads
   localStorage.setItem('audio-player-volume', volume)
+}
+
+const forward10seconds = () => {
+  const currentTime = wavesurfer.getCurrentTime()
+  wavesurfer.setCurrentTime(currentTime + 10)
+}
+
+const rewind10seconds = () => {
+  const currentTime = wavesurfer.getCurrentTime()
+  wavesurfer.setCurrentTime(currentTime - 10)
 }
 
 const setVolumeFromLocalStorage = () => {
@@ -193,6 +205,8 @@ fileNameTitle.textContent = fileName;
 window.addEventListener('load', setVolumeFromLocalStorage)
 playButton.addEventListener('click', togglePlay)
 volumeIcon.addEventListener('click', toggleMute)
+rewindButton.addEventListener('click', rewind10seconds)
+forwardButton.addEventListener('click', forward10seconds)
 volumeSlider.addEventListener('input', handleVolumeChange)
 
 // Wavesurfer event listeners

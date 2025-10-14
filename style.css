@@ -106,6 +106,20 @@ body {
 .volume-icon {
   cursor: pointer;
 }
+
+.step-controls {
+  display: flex;
+  align-items: center;
+}
+
+.step-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+}
+
 .volume-slider {
   margin: 0 1rem;
   cursor: pointer;
